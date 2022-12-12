@@ -49,16 +49,25 @@ function play_round(player, cpu) {
     }
 }
 
+function display_result(result){
+    document.getElementById("roundResult").innerHTML = result;
+}
+
 function game(rounds) {
 
     for (i = 1; i <= rounds; i++) {
+    
         // get input for selection and convert to lower case for check
         let playerSelection = prompt("Rock, Paper or Scissors?");
         playerSelection = playerSelection.toLowerCase();
 
         // play round and debug output to console
         console.log(play_round(playerSelection, getCpuChoice()));
+        const result = play_round(playerSelection, getCpuChoice);
+        console.log(result);
         //play_round(playerSelection, getCpuChoice())
+        //display_result(play_round(playerSelection, getCpuChoice));
+        display_result(result);
     }
 }
 
